@@ -1,0 +1,42 @@
+package day17;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class EnglishDictionary {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		Word w = new Word();
+		
+		while(true) {
+			System.out.println(">메뉴");
+			System.out.println("1. 단어등록");
+			System.out.println("2. 단어출력");
+			System.out.println("3. 종료");
+		}
+
+	}
+
+}
+
+class Word {
+	private Map<String, ArrayList<String>> words = new HashMap<String, ArrayList<String>>();
+	Scanner scan = new Scanner(System.in);
+	
+	public void addWord(String word, String word1) {
+		if(words.containsKey(word)) {
+			ArrayList<String> word2 = words.get(word);
+			word2.add(word);
+		}
+	}
+	
+	public void printword() {
+		System.out.println("-등록된 단어-");
+		for(String word : words.keySet()) {
+			System.out.println(word+" : "+words.get(word));
+		}
+	}
+	
+}

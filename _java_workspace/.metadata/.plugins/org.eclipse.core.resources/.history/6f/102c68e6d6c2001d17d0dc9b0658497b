@@ -1,0 +1,100 @@
+package day15;
+
+import java.util.Scanner;
+
+public class programManager implements Program {
+
+	// 멤버변수 : student class, stdCount 변수
+	private student[] std = new student[5];
+	private int stdCount; // 등록한 학생 카운트
+
+	@Override
+	public void printStudent() {
+		// TODO Auto-generated method stub
+		for (int i = 0; i < stdCount; i++) {
+			std[i].stdPrint(); // 학생 정보만 출력
+//			printStudentOne(std[i]); // 학생정보 + 수강정보
+			System.out.println("========================");
+		}
+
+	}
+
+	@Override
+	public void insertStudent(Scanner scan) {
+		// 1명의 학생정보 값을 입력 받아 객체를 생성한 후 std 배열에 등록
+		// -학번, 이름, 주민번호(생년월일), 학부, 학과
+
+		System.out.println(">학생 정보 입력");
+		System.out.println("이름: ");
+		String name = scan.next();
+		System.out.println("학번: ");
+		String sNum = scan.next();
+		System.out.println("주민번호: ");
+		String bNum = scan.next();
+		System.out.println("학부: ");
+		String faculy = scan.next();
+		System.out.println("학과: ");
+		String major = scan.next();
+		System.out.println("=============");
+
+		// 입력받은 값으로 객체를 생성
+		student s = new student(sNum, name, bNum, faculy, major);
+
+		// 배열이 다 찼다면 더 큰 배열을 생성 후 배열복사
+		if (stdCount == std.length) {
+			// new를 이용해서 배열 생성 (신 배열을 생성)+5
+			student[] tmp = new student[std.length + 5]; // 새배열
+
+			// arraycopy를 이용한 배열복사
+			// System.arraycopy(구배열, 시작번지, 신배열, 시작번지, 총개수)
+			System.arraycopy(std, 0, tmp, 0, stdCount);
+
+			std = tmp;
+
+		}
+		// std 배열에 등록
+		std[stdCount] = s;
+		stdCount++; // 인원증가(배열 번지 증가)
+	}
+
+	@Override
+	public void searchStudent(Scanner scan) {
+		// 검색할 학생이름을 입력받아 배열에서 탐색 후 있다면 학생정보 + 수강정보 출력
+		// 학생정보 + 수강정보 출력 => printStudentOne() 호출
+		
+		System.out.println("학생 이름을 검색해 주세요.");
+		String name = scan.next();
+		boolean found = false;
+		
+		for(int i=0; i<std.length; i++) {
+			if(std[i].getStdName().equals(name)) {
+				found=true;
+				printStudentOne(std[i]);
+			}
+		}
+		
+
+	}
+
+	@Override
+	public void registerSubject(Scanner scan) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void deleteSubject(Scanner scan) {
+		// TODO Auto-generated method stub
+
+	}
+
+	// 1명의 학생정보+수강정보를 같이 출력하고 싶을 때
+	public void printStudentOne(student s) {
+		System.out.println("=학생정보=");
+		s.stdPrint();
+		System.out.println("=수강정보=");
+		s.subPrint();
+
+	}
+
+}

@@ -1,0 +1,13 @@
+package product;
+
+import java.util.ArrayList;
+
+public class ProductManager {
+
+	private ArrayList<Product> productList;
+	
+	public ProductManager() {
+		productList= new ArrayList<>();
+	}
+
+}

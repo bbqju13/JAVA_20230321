@@ -1,0 +1,75 @@
+package day18;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import day16.Word;
+
+public class WordManager {
+	/* package day16에서 생성한 Word클래스 객체화해서 사용
+	 * 1.단어등록
+	 * 2.단어검색
+	 * 3.단어수정
+	 * 4.단어출력
+	 * 5.파일출력
+	 * 6.단어삭제
+	 * 7.종료
+	 * */
+	private ArrayList<Word> list = new ArrayList<>();
+	
+	//메뉴출력
+	public void printMenu() {
+		System.out.println("단어장프로그램");
+		System.out.println("1.단어등록");
+		System.out.println("2.단어검색");
+		System.out.println("3.단어수정");
+		System.out.println("4.단어출력");
+		System.out.println("5.파일출력");
+		System.out.println("6.단어삭제");
+		System.out.println("7.종료");
+		System.out.println("-=-=-=-=-");
+		System.out.println("menu > ");
+	}
+	//기본단어
+	public void addWord() {
+		list.add(new Word("hello","안녕"));
+		list.add(new Word("hi","안녕"));
+		list.add(new Word("dog","개"));
+		list.add(new Word("cat","고양이"));
+		list.add(new Word("home","집"));
+		list.add(new Word("car","차"));
+		
+	}
+
+	
+	//단어등록
+	public void insertWord(Scanner scan) {
+	System.out.println("단어입력 :");
+	String word = scan.next();
+	System.out.println("뜻 입력 :");
+	String mean = scan.next();
+	
+	list.add(new Word(word, mean));
+	}
+	//단어검색
+	public void seaechWord(Scanner scan) {
+		
+	}
+	//단어수정
+	public void modifyWord(Scanner scan) {
+		
+	}
+	//단어출력
+	public void printWord() {
+		
+	}
+	//파일출력
+	public void fileWord() {
+		
+	}
+	//단어삭제
+	public void deleteWord(Scanner scan) {
+		
+	}
+
+}

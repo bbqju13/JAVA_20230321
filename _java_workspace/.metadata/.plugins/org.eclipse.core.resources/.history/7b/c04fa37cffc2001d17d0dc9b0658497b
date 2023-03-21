@@ -1,0 +1,27 @@
+package product;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class ProductManager {
+
+	private ArrayList<Product> productList;
+	private ArrayList<Product> priceList;
+	
+	public ProductManager() {
+		productList=new ArrayList<Product>();
+		priceList=new ArrayList<Product>();
+	}
+	public void add() {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("상품이름");
+		String menu=scan.next();
+		System.out.println("가격");
+		int price=scan.nextInt();
+		
+		Product p=new Product(menu, price);
+		productList.add(p);
+		System.out.println("추가ㅇ");
+	}
+
+}

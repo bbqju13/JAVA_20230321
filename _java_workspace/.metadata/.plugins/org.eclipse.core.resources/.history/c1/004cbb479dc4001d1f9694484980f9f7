@@ -1,0 +1,23 @@
+package day17;
+
+import java.util.ArrayList;
+
+public class TravelPakage {
+
+	public static void main(String[] args) {
+		ArrayList<Travel> list = new ArrayList<Travel>();
+		list.add(new Travel("이순신", 40, 100));
+		list.add(new Travel("이아가", 10, 50));
+		list.add(new Travel("홍길동", 35, 100));
+
+		int total = list.stream().mapToInt(Travel::getMoney).sum();
+		int toage = list.stream().mapToInt(Travel::getAge).sum();
+
+		System.out.println("고객정보");
+		list.stream().forEach(t -> System.out.println(t.toString()));
+		System.out.println("총 여행비용 :" + total);
+		System.out.println("총 합산 나이 :"+toage);
+
+	}
+
+}

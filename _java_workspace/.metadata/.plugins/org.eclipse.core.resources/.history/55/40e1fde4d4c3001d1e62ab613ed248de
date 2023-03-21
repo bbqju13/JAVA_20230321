@@ -1,0 +1,28 @@
+package day16;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class asda {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scan = new Scanner(System.in);
+		ArrayList<Word> list = new ArrayList<Word>();
+		System.out.println("입력할 단어 개수 :");
+		int size = scan.nextInt();
+		
+		while(list.size()<size) {
+			System.out.println("단어");
+			String word = scan.next();
+			System.out.println("뜻");
+			String mean = scan.nextLine(); // 의미 의 뜻이 길면 nextLine(공백을 포함한 장문ㅇㅇ)
+			list.add(new Word(word, mean));
+		}
+		for(Word w : list) {
+			System.out.println(w);
+		}
+
+	}
+
+}

@@ -1,0 +1,47 @@
+package day17;
+
+import java.util.ArrayList;
+
+public class StreamEx03 {
+	public static void main(String[] args) {
+
+		ArrayList<Student> list = new ArrayList<Student>();
+
+		list.add(new Student("홍길동", 90));
+		list.add(new Student("홍길순", 76));
+		list.add(new Student("길동훈", 87));
+		list.add(new Student("길홍순", 46));
+		list.add(new Student("강호동", 67));
+
+		// class 에 toString 존재하면
+//		list.stream().forEach(System.out::println);
+//		{} : 처리구문이 많은 경우
+//		list.stream().forEach(n ->{ // n => new Student("홍길동", 90)
+//			String name = n.getName(); // 홍길동
+//			int score = n.getScore(); // 90
+//			System.out.println(name+" : "+score);
+//		});
+
+		// 합계 => intStream
+		// getSore() => Integer => int 변환
+		// 추출 => map, 추출 후 int변환 => mapToInt
+//		int sum1 = list.stream().mapToInt(n -> n.getScore()).sum();
+
+		list.stream().forEach(n -> System.out.println(n.getName() + " : " + n.getScore()));
+
+		int sum = list.stream().mapToInt(Student::getScore).sum();
+		int count = list.size();
+		
+		// 개수
+//		long count1 = list.stream().count();
+//		System.out.println("합계 :"+sum1+", 총 인원: "+count1);
+
+		
+		System.out.println("점수합계 :" + sum);
+		System.out.println("총 인원 :" + count);
+		
+		// 점수가 70점 이상인 친구들의 합계
+		int uSum = list.stream().mapToInt(n->n.getScore()).filter(f->f>=70).sum();
+
+	}
+}

@@ -1,0 +1,28 @@
+package day17;
+
+import java.util.ArrayList;
+import java.util.stream.Stream;
+
+public class StreamEx {
+
+	public static void main(String[] args) {
+		/* 문자열(이름)을 담는 리스트 생성 후, 스트림으로 생성
+		 * 정렬하여 출력
+		 * */
+		
+		ArrayList<String> word = new ArrayList<String>();
+		word.add("마");
+		word.add("자");
+		word.add("하");
+		word.add("카");
+		word.add("자");
+		word.add("다");
+		word.add("파");
+		
+		Stream<String> w = word.stream().sorted();
+		w.forEach(System.out::print);
+		
+
+	}
+
+}

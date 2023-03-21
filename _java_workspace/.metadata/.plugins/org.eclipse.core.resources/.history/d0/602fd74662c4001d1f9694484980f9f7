@@ -1,0 +1,55 @@
+package day17;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class EnglishDictionary {
+	EnglishDictionary ed = new EnglishDictionary();
+	
+
+}
+
+class Dictionary {
+
+}
+
+class Word {
+	// hello : 안녕, 아침인사, 반가움, 비슷한 말 Hi
+	private Map<String, ArrayList<String>> words = new HashMap<>();
+	Scanner scan = new Scanner(System.in);
+
+	while(true)
+	{
+		System.out.println("단어를 등록 하시겠습니까?(y/n)");
+		String a = scan.nextLine();
+		if (a.equals("n")) {
+			System.out.println("=종료=");
+			break;
+		} else if (a.equals("y")) {
+			System.out.println("단어입력 :");
+			String word = scan.next();
+			if (words.containsKey(word)) {
+				System.out.println("이미 등록된 단어");
+				break;
+			} else {
+				System.out.println("뜻 입력 :");
+				String mean = scan.nextLine();
+				ArrayList<String> mean2 = new ArrayList<String>();
+				mean2.add(mean);
+				words.put(word, mean2);
+			}
+		} else {
+			System.out.println("y/n 을 다시 입력해주세요");
+		}
+	}
+	/*
+	 * y를 입력하면 단어를 입력, n을 입력하면 종료 단어가 이미 있다면 "중복단어" 메서드명 : makeWord
+	 */
+
+	/*
+	 * 단어출력메서드
+	 */
+
+}

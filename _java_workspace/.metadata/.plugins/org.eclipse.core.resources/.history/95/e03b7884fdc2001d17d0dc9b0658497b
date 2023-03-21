@@ -1,0 +1,33 @@
+package product;
+
+import java.util.ArrayList;
+
+public class ProductManager {
+
+	private ArrayList<Product> productList;
+	private ArrayList<Product> priceList;
+
+	public void addProduct(Product product) {
+		productList.add(product);
+	}
+
+	public void listProduct() {
+		System.out.println("상품리스트");
+		for (Product product : productList) {
+			System.out.println("상품 : " + product.getMenu() + "가격 : " + product.getPrice());
+		}
+
+	}
+
+	public void orderProduct(Product product) {
+		priceList.add(product);
+
+	}
+	public void listOrder() {
+		System.out.println("주문목록");
+		for(Product product:priceList) {
+			System.out.println("상품 : "+product.getMenu()+"가격 : "+product.getPrice());
+		}
+	}
+
+}

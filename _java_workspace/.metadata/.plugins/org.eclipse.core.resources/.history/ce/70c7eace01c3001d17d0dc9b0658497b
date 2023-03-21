@@ -1,0 +1,21 @@
+package product;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class ProductManager {
+
+	private ArrayList<Product> productList;
+	private ArrayList<Product> orderList;
+	
+	public ProductManager() {
+		productList=new ArrayList<Product>();
+		orderList=new ArrayList<Product>();
+	}
+	public void addProduct(String menu, int price) {
+		Product product=new Product(menu, price);
+		productList.add(product);
+	}
+	
+
+}

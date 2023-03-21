@@ -1,0 +1,20 @@
+package day18;
+
+import java.io.BufferedReader;
+import java.util.HashMap;
+
+public class BufferedReaderEx03 {
+
+	public static void main(String[] args) {
+		/* out.txt파일을 읽어 들여 map에 저장 후
+		 * 이름:점수
+		 * 총 합계 :
+		 * 총 인원 : 
+		 * 출력
+		 * */
+		final String Path_OUT = "OUT.txt";
+		HashMap<String, Integer> map = new HashMap<String, Integer>();
+
+	}
+
+}

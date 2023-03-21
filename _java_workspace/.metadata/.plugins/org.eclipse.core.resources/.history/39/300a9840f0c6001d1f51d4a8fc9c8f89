@@ -1,0 +1,10 @@
+package day16;
+
+import java.util.ArrayList;
+
+public class WordManager {
+	/* package day16 에서 생성한 Word클래스 객체화해서 사용
+	 * */
+	ArrayList<Word> list = new ArrayList<Word>();
+
+}

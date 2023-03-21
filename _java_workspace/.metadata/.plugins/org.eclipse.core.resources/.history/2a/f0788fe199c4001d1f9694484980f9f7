@@ -1,0 +1,13 @@
+package day17;
+
+import java.util.ArrayList;
+
+public class TravelPakage {
+
+	public static void main(String[] args) {
+		ArrayList<Travel> list = new ArrayList<Travel>();
+		list.add(new Travel("이순신", 40, 100));
+
+	}
+
+}

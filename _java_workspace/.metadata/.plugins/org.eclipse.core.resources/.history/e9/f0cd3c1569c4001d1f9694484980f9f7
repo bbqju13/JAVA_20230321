@@ -1,0 +1,62 @@
+package day17;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class EnglishDictionary {
+	public static void main(String[] args) {
+		Word w = new Word();
+
+	}
+
+}
+
+class Dictionary {
+
+}
+
+class Word {
+	// hello : 안녕, 아침인사, 반가움, 비슷한 말 Hi
+	private Map<String, ArrayList<String>> words = new HashMap<>();
+	Scanner scan = new Scanner(System.in);
+
+	public void printWord() {
+		System.out.println("단어를 입력 :(y/n)");
+		String a = scan.nextLine();
+		while(true) {
+			if(a.equals("n")) {
+				System.out.println("-끝-");
+				break;
+			}else if(a.equals("y")) {
+				System.out.println("단어입력 :");
+				String word = scan.next();
+			}
+		}
+	}
+	
+}
+//while(true){
+//	System.out.println("단어를 등록 하시겠습니까?(y/n)");
+//	String a = scan.nextLine();
+//	if (a.equals("n")) {
+//		System.out.println("=종료=");
+//		break;
+//	} else if (a.equals("y")) {
+//		System.out.println("단어입력 :");
+//		String word = scan.next();
+//		if (words.containsKey(word)) {
+//			System.out.println("이미 등록된 단어");
+//			break;
+//		} else {
+//			System.out.println("뜻 입력 :");
+//			String mean = scan.nextLine();
+//			ArrayList<String> mean2 = new ArrayList<String>();
+//			mean2.add(mean);
+//			words.put(word, mean2);
+//		}
+//	} else {
+//		System.out.println("y/n 을 다시 입력해주세요");
+//	}
+//}

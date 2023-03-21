@@ -1,0 +1,8 @@
+package day16;
+
+import java.util.ArrayList;
+
+public class wordBook {
+	private ArrayList<Word> wordlist = new ArrayList<Word>();
+
+}

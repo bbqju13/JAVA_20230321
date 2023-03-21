@@ -1,0 +1,48 @@
+package day16;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+public class wordBook {
+	private ArrayList<Word> wordlist = new ArrayList<Word>();
+
+	public void addWord(String word, String mean) {
+		Word newWord = new Word(word, mean);
+		wordlist.add(newWord);
+		System.out.println("단어 추가됨");
+	}
+
+	public void printWordBook() {
+		if (wordlist.size() == 0) {
+			System.out.println("단어가 없습니다.");
+		} else {
+			Collections.sort(wordlist, new Comparator<Word>() {
+
+				@Override
+				public int compare(Word o1, Word o2) {
+					// TODO Auto-generated method stub
+					return o1.getWord().compareTo(o2.getWord());
+				}
+			});
+			System.out.println("단어 목록");
+			for (Word word : wordlist) {
+				System.out.println(word.getWord() + " : " + word.getMean());
+			}
+		}
+	}
+	public void searchWord(String word) {
+		boolean asd = false;
+		for(Word w : wordlist) {
+			if(w.getWord().equals(word)) {
+				System.out.println(w.getWord()+" 의뜻 : "+w.getMean());
+				asd=true;
+				break;
+			}
+			if(!asd) {
+				System.out.println("해당 단어 없음");
+			}
+		}
+	}
+
+}

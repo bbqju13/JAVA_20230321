@@ -1,0 +1,18 @@
+package product;
+
+import java.util.ArrayList;
+
+public class ProductManager {
+
+	private ArrayList<Product> productList;
+	private ArrayList<Product> priceList;
+
+	public void addProduct(Product product) {
+		productList.add(product);
+	}
+	public void listProduct(Product price) {
+		priceList.add(product);
+		
+	}
+
+}

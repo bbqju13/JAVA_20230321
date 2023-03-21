@@ -1,0 +1,9 @@
+package day17;
+
+import java.util.ArrayList;
+
+public class StreamEx03 {
+	
+	ArrayList<Student> list = new ArrayList<Student>();
+
+}

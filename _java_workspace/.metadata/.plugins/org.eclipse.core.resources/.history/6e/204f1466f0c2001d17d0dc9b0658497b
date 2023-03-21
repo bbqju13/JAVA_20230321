@@ -1,0 +1,11 @@
+package product;
+
+public class ProductManager {
+	/* 메뉴등록리스트, 주문리스트
+	 * 메뉴 추가기능
+	 * 메뉴리스트 출력기능
+	 * 제품 주문 하는기능
+	 * 주문 내역을 출력하는 기능
+	 * */
+
+}

@@ -1,0 +1,9 @@
+단어장
+apple : 사과
+car : 차
+cat : 고양이
+dog : 개
+fish : 물고기
+hello : 안녕
+hi : 안녕
+home : 집

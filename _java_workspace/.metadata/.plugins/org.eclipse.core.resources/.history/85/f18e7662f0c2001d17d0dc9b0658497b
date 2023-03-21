@@ -1,0 +1,8 @@
+package product;
+
+public class Order {
+	/* Order extends Product
+	 * 수량, 총 지불 금액(합계)
+	 * */
+
+}

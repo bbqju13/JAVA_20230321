@@ -1,0 +1,22 @@
+package product;
+
+import java.util.Scanner;
+
+public class Mian {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		ProductManager pm = new ProductManager();
+
+	}
+	while(true) {
+		System.out.println(">메뉴");
+		System.out.println("1. 제품 추가");
+		System.out.println("2. 제품리스트");
+		System.out.println("3. 제품 주문");
+		System.out.println("4. 주문내역");
+		System.out.println("5. 메뉴 등록");
+		System.out.println("6. 프로그램종료");
+	}
+
+}

@@ -1,0 +1,56 @@
+package day15;
+
+import java.util.Scanner;
+
+public class programManager implements Program {
+	
+	//멤버변수 : student class, stdCount 변수
+	private student[] std = new student[5];
+	private int stdCount; // 등록한 학생 카운트
+	
+	
+
+	@Override
+	public void printStudent() {
+		// TODO Auto-generated method stub
+		for(int i=0; i<stdCount; i++) {
+			std[i].stdPrint();
+			
+		}
+		
+	}
+
+	@Override
+	public void insertStudent(Scanner scan) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void searchStudent(Scanner scan) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void registerSubject(Scanner scan) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteSubject(Scanner scan) {
+		// TODO Auto-generated method stub
+		
+	}
+	//1명의 학생정보+수강정보를 같이 출력하고 싶을 때
+	public void printStudentOne(student s) {
+		System.out.println("=학생정보=");
+		s.stdPrint();
+		System.out.println("=수강정보=");
+		s.subPrint();
+		
+	}
+	
+
+}

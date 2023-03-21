@@ -1,0 +1,109 @@
+package day15;
+
+public class student {
+	/* 학생클래스: 한 학생의 정보를 나타내는 클래스
+	-학번, 이름, 주민번호(생년월일), 학부, 학과, 수강과목(과목클래스를 배열로 생성 5개)
+	-수강과목의 번지를 대신할 count 변수로 나타내기(getter/setter추가)
+	-메서드
+ 	-수강과목 추가(배열이 다 찼다면 늘려주기)
+ 	-수강과목 삭제
+ 	-생성자, getter/setter, 출력메서드(print) - 2가지 형태로
+	 * */
+	
+	// 멤버변수 선언
+	private String stdNum; // 학번
+	private String stdName; // 이름
+	private String birth; // 주민,생년월일
+	private String faculty; // 학부
+	private String major; // 학과
+	private Subject[] subjectList; // 수강과목 // subject 클래스를 배열로 선언.
+	private int subCount; // 수강과목 개수	
+	
+	//기본 생성자
+	public student() {}
+
+	//전체 요소를 받는 생성자
+	public student(String stdNum, String stdName, String birth, String faculty, String major) {
+		this.stdNum = stdNum;
+		this.stdName = stdName;
+		this.birth = birth;
+		this.faculty = faculty;
+		this.major = major;
+	}
+	// 메서드
+	// print method : 학생 정보만 출력
+	public void stdPrint() {
+		System.out.println("학생명(학번): >"+stdName+"("+stdNum+")");
+		System.out.println("학부(학과): >"+faculty+"("+major+")");
+	}
+	
+	// 수강과목을 출력하는 메서드
+	public void subPrint() {
+		//수강과목이 없을때
+		if(subCount==0) {
+			System.out.println("수강중인 과목이 없습니다.");
+		}
+		//수강과목이 있을때 : 수강과목이 여러개 있을 수 있음.
+		for(int i=0; i<subCount; i++) {
+			System.out.println(subjectList[i]);			
+		}
+	}
+	
+	
+	// getter/setter
+	public String getStdNum() {
+		return stdNum;
+	}
+
+	public void setStdNum(String stdNum) {
+		this.stdNum = stdNum;
+	}
+
+	public String getStdName() {
+		return stdName;
+	}
+
+	public void setStdName(String stdName) {
+		this.stdName = stdName;
+	}
+
+	public String getBirth() {
+		return birth;
+	}
+
+	public void setBirth(String birth) {
+		this.birth = birth;
+	}
+
+	public String getFaculty() {
+		return faculty;
+	}
+
+	public void setFaculty(String faculty) {
+		this.faculty = faculty;
+	}
+
+	public String getMajor() {
+		return major;
+	}
+
+	public void setMajor(String major) {
+		this.major = major;
+	}
+
+	public Subject[] getSubjectList() {
+		return subjectList;
+	}
+
+	public void setSubjectList(Subject[] subjectList) {
+		this.subjectList = subjectList;
+	}
+
+	public int getSubCount() {
+		return subCount;
+	}
+	
+	
+}
+	
+	

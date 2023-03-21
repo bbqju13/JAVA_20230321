@@ -1,0 +1,127 @@
+package day15;
+
+public class student {
+	/* 학생클래스: 한 학생의 정보를 나타내는 클래스
+	-학번, 이름, 주민번호(생년월일), 학부, 학과, 수강과목(과목클래스를 배열로 생성 5개)
+	-수강과목의 번지를 대신할 count 변수로 나타내기(getter/setter추가)
+	-메서드
+ 	-수강과목 추가(배열이 다 찼다면 늘려주기)
+ 	-수강과목 삭제
+	 * */
+	
+	private String id; // 학번
+	private String name; // 이름
+	private String birth; // 주민,생년월일
+	private String college; // 학부
+	private String major; // 학과
+	private Subject[] subjects; // 수강과목
+	private int count; // 수강과목 개수
+	
+	
+	public void Student(String id, String name, String birth, String college, String major) {
+		this.id = id;
+		this.name = name;
+		this.birth = birth;
+		this.college = college;
+		this.major = major;
+		this.subjects = new Subject[5];
+		this.count = 0;
+	}
+
+
+	public String getId() {
+		return id;
+	}
+
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public String getBirth() {
+		return birth;
+	}
+
+
+	public void setBirth(String birth) {
+		this.birth = birth;
+	}
+
+
+	public String getCollege() {
+		return college;
+	}
+
+
+	public void setCollege(String college) {
+		this.college = college;
+	}
+
+
+	public String getMajor() {
+		return major;
+	}
+
+
+	public void setMajor(String major) {
+		this.major = major;
+	}
+
+
+	public Subject[] getSubjects() {
+		return subjects;
+	}
+
+
+	public void setSubjects(Subject[] subjects) {
+		this.subjects = subjects;
+	}
+
+
+	public int getCount() {
+		return count;
+	}
+
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+	
+	
+	public void registerSubject(Subject subject) {
+		if(count>=subjects.length) {
+			Subject[] newSubjects= new Subject[subjects.length+5];
+			for(int i=0; i<subjects.length; i++) {
+				newSubjects[i]=subjects[i];
+			}
+			subjects=newSubjects;
+		}
+		subjects[count]=subject;
+		count++;
+	}
+	
+	public void deleteSubject(Subject subject) {
+		for(int i=0; i<count; i++) {
+			if(subjects[i].getCode().equals(subject.getCode())) {
+				for(int j=i; j<count-1; j++) {
+					subjects[j]=subjects[j+1];
+				}
+				subjects[count-1]=null;
+				count--;
+				break;
+			}
+			
+		}
+	}
+}

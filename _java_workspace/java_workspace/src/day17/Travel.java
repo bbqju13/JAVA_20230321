@@ -1,0 +1,57 @@
+package day17;
+
+public class Travel {
+	/*
+	 * 여행상품 있습니다 여행 비용은 15세 이상은 100만원 15세 미만은 50만원 고객 3명이 패키지 여행을 떠나려고 할때
+	 * 
+	 * 1.비용계산 2.고객명단 출력 고객은 class 로 생성, ArrayList로 추가
+	 * 
+	 * 고객정보 이름:이순신, 나이: 40, 여행비용:100 이름:이아기, 나이: 10, 여행비용:50 이름:홍길동, 나이: 35,
+	 * 여행비용:100
+	 * 
+	 * 총 여행비용 : 250
+	 */
+	private String name;
+	private int age;
+	private int money;
+
+	public Travel() {
+	}
+
+	public Travel(String name, int age) {
+		this.name = name;
+		this.age = age;
+		this.money = (age >= 15) ? 100 : 50;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public int getMoney() {
+		return money;
+	}
+
+	public void setMoney(int money) {
+		this.money = money;
+	}
+
+	@Override
+	public String toString() {
+		return "이름 :" + name + "\n나이 :" + age + "\n여행비용 :" + money + "\n";
+	}
+
+}
+ 
